@@ -1,0 +1,41 @@
+
+<div class="col-md-6">
+    <h2>
+        todo works!
+      </h2>
+  
+    <button (click)="isReactice()" class="btn btn-primary">Reactice</button>
+ 
+  <div class="form-group" *ngIf="addLoading">
+    <form [formGroup]="todoForm">
+      <div class="form-group">
+        <label class="center-block">Title:
+          <input class="form-control" formControlName="title">
+        </label>
+      </div>
+      <div class="form-group">
+        <label class="center-block">ToDo:
+          <input class="form-control" formControlName="todo">
+        </label>
+      </div>
+      <button (click)="addTodo()" class="btn btn-success">Add Todo</button>
+      <p>{{todoForm.value|json}}</p>
+    </form>
+  </div>
+  <ul>
+    <li *ngFor="let todolist of todoLists">
+      
+      <div class="form-group">
+        <label class="center-block">Title:
+          <strong>{{todolist.title}}</strong>
+        </label>
+        <label class="center-block">Todo:
+          <strong>{{todolist.todo}}</strong>
+        </label>
+        <button class="btn btn-delete" (click)="deleteTodo(todolist)">Delete</button>
+        <button class="btn btn-success" (click)="DoneEvent(todolist)">Done</button>
+      </div>
+   
+    </li>
+  </ul>
+</div>

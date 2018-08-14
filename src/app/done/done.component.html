@@ -1,0 +1,21 @@
+<h2>
+    Done works!
+</h2>
+<div class="col-md-6">
+
+  <ul>
+      <li *ngFor="let todolist of todoLists">
+        
+        <div class="form-group">
+          <label class="center-block">Title:
+            <strong>{{todolist.title}}</strong>
+          </label>
+          <label class="center-block">Todo:
+            <strong>{{todolist.todo}}</strong>
+          </label>
+          <button class="btn btn-delete" (click)="deleteDone(todolist)">Delete</button>
+        </div>
+     
+      </li>
+    </ul>
+</div>
